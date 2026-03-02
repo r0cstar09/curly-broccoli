@@ -3,14 +3,20 @@ import { button } from '~/styles.ts';
 ---
 
 <header
-	class="breakout focus-ring-light relative flex min-h-[50vh] flex-col items-center justify-center gap-6 bg-theme-accent-950 py-16 text-white md:min-h-[60vh] md:gap-8 md:py-24"
+	class="breakout focus-ring-light relative flex min-h-[50vh] flex-col items-center justify-center gap-6 overflow-hidden bg-theme-accent-950 py-16 text-white md:min-h-[60vh] md:gap-8 md:py-24"
 >
-	<div class="content text-center">
-		<h1 class="text-4xl font-extrabold tracking-tight md:text-6xl md:leading-tight">
+	<img
+		src="/assets/hero-image-for-site.png"
+		alt=""
+		class="absolute inset-0 size-full object-cover object-center opacity-40"
+	/>
+	<div class="absolute inset-0 bg-theme-accent-950/70" aria-hidden="true"></div>
+	<div class="content relative z-10 text-center">
+		<h1 class="font-display text-4xl font-extrabold tracking-tight md:text-6xl md:leading-tight">
 			Time to suit up, Developer.
 		</h1>
 	</div>
-	<div>
+	<div class="relative z-10">
 		<a
 			href="#products"
 			class={button({ theme: 'light', className: 'font-bold md:h-12 md:px-6 md:text-lg' })}

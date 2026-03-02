@@ -26,17 +26,29 @@ if (productResponse.error) {
 
 const product = productResponse.data;
 
-const productImageSrcs = [product.imageUrl, ...product.images.map((it) => it.url)];
+const productImageSrcs = [product.imageUrl, ...product.images.map((it) => it.url)].filter(Boolean);
+const isLocalPath = (src: string) => src.startsWith('/');
 const productImages = await Promise.all(
-	productImageSrcs.map((src) =>
-		getImage({
+	productImageSrcs.map(async (src) => {
+		if (isLocalPath(src)) {
+			return {
+				src,
+				srcSet: { attribute: '' },
+				attributes: {
+					sizes: '(min-width: 1280px) 960px, 100vw',
+					width: 960,
+					height: 960,
+				},
+			};
+		}
+		return getImage({
 			src: new URL(src, Astro.url.origin).href,
 			alt: '',
 			inferSize: true,
 			widths: [400, 700, 960],
 			sizes: '(min-width: 1280px) 960px, 100vw',
-		}),
-	),
+		});
+	}),
 );
 const firstImage = productImages[0];
 if (!firstImage) throw new Error(`No images found for product ${id}`);

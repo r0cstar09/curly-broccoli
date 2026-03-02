@@ -1,5 +1,4 @@
 ---
-import { Image } from 'astro:assets';
 import type { Product } from 'storefront:client';
 import { twMerge } from 'tailwind-merge';
 import Card from '~/components/ui/Card.tsx';
@@ -14,6 +13,7 @@ interface Props extends Product {
 }
 
 const { class: className, elementId, imageLoading, ...product } = Astro.props;
+const imageSrc = product.imageUrl.startsWith('/') ? product.imageUrl : new URL(product.imageUrl, Astro.url).href;
 ---
 
 <a
@@ -30,14 +30,14 @@ const { class: className, elementId, imageLoading, ...product } = Astro.props;
 				</span>
 			)
 		}
-		<Card class="flex aspect-[5/6] items-center justify-center">
-			<Image
-				src={new URL(product.imageUrl, Astro.url).href}
+		<Card class="flex aspect-[5/6] items-center justify-center overflow-hidden">
+			<img
+				src={imageSrc}
 				alt={product.name}
 				width={290}
-				height={290}
+				height={348}
 				loading={imageLoading ?? 'lazy'}
-				densities={[1, 1.5, 2]}
+				class="size-full object-cover"
 				draggable="false"
 			/>
 		</Card>

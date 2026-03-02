@@ -11,7 +11,8 @@ export default {
 	theme: {
 		extend: {
 			fontFamily: {
-				sans: ['Inter Variable', ...fontFamily.sans],
+				sans: ['Exo 2 Variable', ...fontFamily.sans],
+				display: ['Orbitron Variable', ...fontFamily.sans],
 			},
 			colors: {
 				theme: {

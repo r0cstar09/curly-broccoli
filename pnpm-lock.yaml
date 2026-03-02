@@ -17,9 +17,15 @@ importers:
       '@astrojs/vercel':
         specifier: ^9.0.0
         version: 9.0.4(astro@5.18.0(@netlify/blobs@10.7.0)(@types/node@20.10.4)(@vercel/functions@2.2.13)(jiti@2.6.1)(rollup@4.59.0)(typescript@5.3.3)(yaml@2.8.2))(rollup@4.59.0)(svelte@4.2.8)
+      '@fontsource-variable/exo-2':
+        specifier: ^5.2.8
+        version: 5.2.8
       '@fontsource-variable/inter':
         specifier: 5.0.18
         version: 5.0.18
+      '@fontsource-variable/orbitron':
+        specifier: ^5.2.8
+        version: 5.2.8
       '@hey-api/client-fetch':
         specifier: ^0.2.4
         version: 0.2.4
@@ -848,8 +854,14 @@ packages:
   '@floating-ui/utils@0.2.7':
     resolution: {integrity: sha512-X8R8Oj771YRl/w+c1HqAC1szL8zWQRwFvgDwT129k9ACdBoud/+/rX9V0qiMl6LWUdP9voC2nDVZYPMQQsb6eA==}
 
+  '@fontsource-variable/exo-2@5.2.8':
+    resolution: {integrity: sha512-P3k8XX+RE1E8QA4/EpR0wSmcvenHjYd7NUNbPNH8iUSA9mGDkPVxE6cxOsx7ksRKY1p0R1ExndDNTpzwwLgkVg==}
+
   '@fontsource-variable/inter@5.0.18':
     resolution: {integrity: sha512-rJzSrtJ3b7djiGFvRuTe6stDfbYJGhdQSfn2SI2WfXviee7Er0yKAHE5u7FU7OWVQQQ1x3+cxdmx9NdiAkcrcA==}
+
+  '@fontsource-variable/orbitron@5.2.8':
+    resolution: {integrity: sha512-Jazvuj2cgBq663z1j/+JdwH2ztqQ8RaGhJgdHYphFbtfowiFaR74R8UgZl7x1skbXmUMWWH1jXfG7mrYFIYK0A==}
 
   '@hey-api/client-fetch@0.2.4':
     resolution: {integrity: sha512-SGTVAVw3PlKDLw+IyhNhb/jCH3P1P2xJzLxA8Kyz1g95HrkYOJdRpl9F5I7LLwo9aCIB7nwR2NrSeX7QaQD7vQ==}
@@ -3178,7 +3190,6 @@ packages:
 
   libsql@0.4.7:
     resolution: {integrity: sha512-T9eIRCs6b0J1SHKYIvD8+KCJMcWZ900iZyxdnSCdqxN12Z1ijzT+jY5nrk72Jw4B0HGzms2NgpryArlJqvc3Lw==}
-    cpu: [x64, arm64, wasm32]
     os: [darwin, linux, win32]
 
   lilconfig@2.1.0:
@@ -5622,7 +5633,11 @@ snapshots:
 
   '@floating-ui/utils@0.2.7': {}
 
+  '@fontsource-variable/exo-2@5.2.8': {}
+
   '@fontsource-variable/inter@5.0.18': {}
+
+  '@fontsource-variable/orbitron@5.2.8': {}
 
   '@hey-api/client-fetch@0.2.4': {}
 

@@ -18,7 +18,7 @@ export function PageSection(props: PageSectionProps) {
 export function PageHeading(props: ParentProps<JSX.HTMLAttributes<HTMLHeadingElement>>) {
 	const [local, others] = splitProps(props, ['children', 'class']);
 	return (
-		<h2 {...others} class={twMerge('text-2xl font-bold text-theme-base-100 md:text-3xl', local.class)}>
+		<h2 {...others} class={twMerge('font-display text-2xl font-bold text-theme-base-100 md:text-3xl', local.class)}>
 			{local.children}
 		</h2>
 	);
