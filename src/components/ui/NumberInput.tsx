@@ -21,7 +21,7 @@ export function NumberInput(
 	};
 
 	return (
-		<div class="flex h-11 w-fit items-stretch divide-x divide-slate-300 border border-slate-300 bg-slate-100 text-slate-600">
+		<div class="flex h-11 w-fit items-stretch divide-x divide-theme-accent-200 border border-theme-accent-200 bg-theme-accent-50 text-theme-accent-800">
 			<NumberInputButton
 				icon={<RiSystemSubtractFill />}
 				onClick={() => update(props.value - 1)}
@@ -58,7 +58,7 @@ function NumberInputButton(
 	return (
 		<button
 			type="button"
-			class="flex aspect-square h-full items-center justify-center transition-colors hover:bg-slate-200 disabled:cursor-not-allowed disabled:text-slate-400"
+			class="flex aspect-square h-full items-center justify-center transition-colors hover:bg-theme-accent-100 disabled:cursor-not-allowed disabled:text-theme-accent-400"
 			{...others}
 		>
 			<span class="sr-only">{local.children}</span>

@@ -76,7 +76,7 @@ if (!firstImage) throw new Error(`No images found for product ${id}`);
 				<header class="mb-8 flex flex-col items-start gap-3">
 					{
 						product.discount > 0 ? (
-							<p class="rounded-full bg-red-100 px-3 py-[6px] text-sm  font-medium text-red-600">
+							<p class="rounded-full bg-theme-accent-100 px-3 py-[6px] text-sm font-medium text-theme-accent-700">
 								{Math.round((1 - (product.price - product.discount) / product.price) * 100)}% off
 							</p>
 						) : null
@@ -84,8 +84,8 @@ if (!firstImage) throw new Error(`No images found for product ${id}`);
 					<h1 class="text-pretty text-3xl font-bold md:text-4xl">
 						{product.name}
 					</h1>
-					{product.tagline && <p class="text-slate-700">{product.tagline}</p>}
-					<p class="text-xl text-slate-700 md:text-2xl">
+					{product.tagline && <p class="text-theme-base-700">{product.tagline}</p>}
+					<p class="text-xl text-theme-base-700 md:text-2xl">
 						<ProductPrice
 							class="gap-3 font-semibold"
 							price={product.price}

@@ -8,8 +8,8 @@ export function button({
 	className?: ClassNameValue;
 } = {}) {
 	return twMerge(
-		theme === 'dark' && 'bg-theme-base-900 hover:bg-theme-base-600 text-white',
-		theme === 'light' && 'bg-theme-base-100 hover:bg-theme-base-200 text-theme-base-900',
+		theme === 'dark' && 'bg-theme-accent-600 hover:bg-theme-accent-700 text-white',
+		theme === 'light' && 'bg-white hover:bg-theme-accent-50 text-theme-accent-700 border border-theme-accent-200',
 		'h-9 px-4 text-sm font-semibold uppercase transition flex items-center justify-center gap-1.5',
 		className,
 	);

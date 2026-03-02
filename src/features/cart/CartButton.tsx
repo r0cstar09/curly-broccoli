@@ -24,7 +24,7 @@ export function CartButton(props: StrictOmit<ComponentProps<typeof SquareIconBut
 				<div
 					role="status"
 					data-visible={itemCount() > 0 || undefined}
-					class="grid size-4 place-content-center rounded-full bg-slate-700 text-xs text-white opacity-0 transition-opacity data-[visible]:opacity-100"
+					class="grid size-4 place-content-center rounded-full bg-theme-accent-600 text-xs text-white opacity-0 transition-opacity data-[visible]:opacity-100"
 				>
 					{itemCount()} <span class="sr-only">items added</span>
 				</div>

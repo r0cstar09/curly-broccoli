@@ -89,7 +89,7 @@ export function AddToCartForm(props: { product: Product }) {
 				<For each={[...productOptionValues().entries()]}>
 					{([option, values]) => (
 						<fieldset>
-							<legend class="mb-1 text-slate-700">{option ?? 'Variants'}</legend>
+							<legend class="mb-1 text-theme-base-700">{option ?? 'Variants'}</legend>
 							<Show when={unpickedVariantVisible() && !selectedVariant()}>
 								<p role="alert" class="mb-2 text-sm text-red-400">
 									Please make a selection.
@@ -98,7 +98,7 @@ export function AddToCartForm(props: { product: Product }) {
 							<div class="flex flex-wrap gap-2">
 								<For each={[...values]}>
 									{(value) => (
-										<label class="flex h-11 min-w-11 items-center justify-center gap-1.5 border border-slate-300 bg-slate-100 px-3 text-center text-sm text-slate-600 transition hover:border-slate-500 has-[:checked]:border-slate-900 has-[:checked]:text-slate-900">
+										<label class="flex h-11 min-w-11 items-center justify-center gap-1.5 border border-theme-accent-200 bg-theme-accent-50 px-3 text-center text-sm text-theme-accent-700 transition hover:border-theme-accent-400 has-[:checked]:border-theme-accent-600 has-[:checked]:bg-theme-accent-100 has-[:checked]:text-theme-accent-900">
 											<input
 												type="radio"
 												value={value}
@@ -125,7 +125,7 @@ export function AddToCartForm(props: { product: Product }) {
 			</Show>
 
 			<div class="mb-2">
-				<label for="quantity" class="mb-2 block text-slate-700">
+				<label for="quantity" class="mb-2 block text-theme-base-700">
 					Quantity
 				</label>
 				<NumberInput id="quantity" min={1} value={quantity()} setValue={setQuantity} />

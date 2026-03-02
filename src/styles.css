@@ -13,11 +13,11 @@
 
 	:focus-visible,
 	.focus-ring-dark :focus-visible {
-		@apply ring-theme-base-900 ring-offset-theme-base-100;
+		@apply ring-theme-accent-600 ring-offset-white;
 	}
 
 	.focus-ring-light :focus-visible {
-		@apply ring-theme-base-100 ring-offset-theme-base-900;
+		@apply ring-white ring-offset-theme-accent-900;
 	}
 
 	.focus-ring-inset {

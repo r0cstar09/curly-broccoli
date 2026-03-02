@@ -7,7 +7,7 @@ export function ProductDetailDescriptionDialog(props: { title: string; children:
 		<Drawer
 			{...props}
 			trigger={
-				<div class="flex h-14 cursor-pointer list-none items-center justify-between border-y border-slate-300 px-3 font-bold text-slate-600">
+				<div class="flex h-14 cursor-pointer list-none items-center justify-between border-y border-theme-base-200 px-3 font-bold text-theme-base-600">
 					{props.title}
 					<RiArrowsArrowRightSLine class="!size-6" />
 				</div>

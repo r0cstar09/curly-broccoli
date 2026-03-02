@@ -29,7 +29,7 @@ const { title } = Astro.props;
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="mask-icon" href="/favicon.svg" color="#8D46E7" />
+		<link rel="mask-icon" href="/favicon.svg" color="#7c3aed" />
 
 		<SEO {...defaults} {title} />
 
@@ -46,9 +46,9 @@ const { title } = Astro.props;
 	</head>
 	<body class="content-grid min-h-screen">
 		<SiteRibbon />
-		<div class={`breakout border-b w-full border-theme-base-300`}></div>
+		<div class={`breakout border-b w-full border-theme-accent-200`}></div>
 		<SiteHeader />
-		<div class={`breakout border-b w-full border-theme-base-300`}></div>
+		<div class={`breakout border-b w-full border-theme-accent-200`}></div>
 		<slot />
 		<div class="pt-48">
 			<SiteFooter />

@@ -75,18 +75,18 @@ export function CartItem(props: { item: LineItem; class?: string }) {
 				</a>
 
 				<div class="flex flex-1 flex-col">
-					<p class="mt-auto py-2 text-lg/none font-medium text-slate-700">
+					<p class="mt-auto py-2 text-lg/none font-medium text-theme-base-700">
 						{props.item.productVariant.product.name}
 					</p>
 
 					<Show when={Object.values(props.item.productVariant.options).length > 0}>
-						<p class="-mt-[3px] font-medium text-slate-500">
+						<p class="-mt-[3px] font-medium text-theme-base-500">
 							{Object.values(props.item.productVariant.options).join(' • ')}
 						</p>
 					</Show>
 
 					{/* this translation is for visual vertical centering */}
-					<p class="-translate-y-0.5 py-2 font-medium leading-none text-slate-600">
+					<p class="-translate-y-0.5 py-2 font-medium leading-none text-theme-base-600">
 						<ProductPrice
 							price={props.item.productVariant.product.price}
 							discount={props.item.productVariant.product.discount}
@@ -109,7 +109,7 @@ export function CartItem(props: { item: LineItem; class?: string }) {
 
 				<button
 					type="button"
-					class="-my-2 self-end p-2 text-slate-600 hover:text-slate-700"
+					class="-my-2 self-end p-2 text-theme-accent-600 hover:text-theme-accent-700"
 					onClick={() => deleteMutation.mutate()}
 				>
 					<RiSystemDeleteBinLine class="size-6" />

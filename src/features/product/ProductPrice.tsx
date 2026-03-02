@@ -13,7 +13,7 @@ export function ProductPrice(props: Props) {
 		<span class={twMerge('flex gap-2 font-medium', props.class)}>
 			{formatProductPrice(props.price - props.discount)}
 			{props.discount > 0 && (
-				<span class="text-slate-400 line-through">{formatProductPrice(props.price)}</span>
+				<span class="text-theme-base-400 line-through">{formatProductPrice(props.price)}</span>
 			)}
 		</span>
 	);
