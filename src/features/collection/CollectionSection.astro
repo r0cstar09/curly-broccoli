@@ -12,7 +12,7 @@ const collectionsResponse = await getCollections();
 const collections = collectionsResponse.data?.items ?? [];
 
 const HEADING_ID = 'collection-section-heading';
-const { heading = 'Shop by category' } = Astro.props;
+const { heading = 'Shop by collection' } = Astro.props;
 ---
 
 <PageSection aria-labelledby={HEADING_ID}>
@@ -25,4 +25,12 @@ const { heading = 'Shop by category' } = Astro.props;
 			)
 		}
 	</div>
+	<p class="mt-4">
+		<a
+			href={collections[0]?.slug ? `/collections/${collections[0].slug}` : '/'}
+			class="text-theme-base-600 underline underline-offset-2 hover:text-theme-base-900"
+		>
+			View all products
+		</a>
+	</p>
 </PageSection>

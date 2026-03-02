@@ -8,7 +8,7 @@ import { defineConfig, envField } from 'astro/config';
 export default defineConfig({
 	integrations: [tailwind({ applyBaseStyles: false }), icon(), solidJs()],
 	// Update to your storefront URL
-	site: 'https://shop.astro.build',
+	site: 'https://gitmo.com',
 	output: 'server',
 	adapter: vercel(),
 	vite: {
@@ -22,9 +22,7 @@ export default defineConfig({
 		// Update to your own image domains
 		domains: [
 			'localhost',
-			'shop-next.astro.build',
-			'shop.astro.build',
-			'main--astro-swag-shop.netlify.app',
+			'gitmo.com',
 			'placehold.co',
 		],
 	},

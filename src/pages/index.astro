@@ -8,13 +8,20 @@ import PrimaryLayout from '~/layouts/PrimaryLayout.astro';
 applyDefaultCacheHeaders(Astro.response.headers);
 ---
 
-<PrimaryLayout title="Astro Shop">
+<PrimaryLayout title="Gitmo">
 	<LandingHero />
-	<main class="breakout mt-16 flex flex-col gap-y-16">
+	<main class="breakout mt-16 flex flex-col gap-y-16" id="products">
 		<div class="content">
-			<ProductCarouselSection heading="Popular right now" />
+			<ProductCarouselSection heading="Fresh designs from the community" />
 		</div>
 
-		<CollectionSection />
+		<div class="content">
+			<ProductCarouselSection
+				heading="Featured products"
+				filterProducts={(products) => products.filter((p) => p.collectionIds?.includes('bestSellers'))}
+			/>
+		</div>
+
+		<CollectionSection heading="Shop by collection" />
 	</main>
 </PrimaryLayout>

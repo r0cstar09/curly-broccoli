@@ -22,7 +22,14 @@ const { class: className, elementId, imageLoading, ...product } = Astro.props;
 	id={elementId ?? undefined}
 	aria-label={`${product.name} for ${formatProductPrice(product.price)}`}
 >
-	<article>
+	<article class="relative">
+		{
+			(product.discount > 0 || product.collectionIds?.includes('bestSellers')) && (
+				<span class="absolute left-2 top-2 z-10 rounded bg-theme-base-900 px-2 py-0.5 text-xs font-semibold uppercase text-white">
+					New
+				</span>
+			)
+		}
 		<Card class="flex aspect-[5/6] items-center justify-center">
 			<Image
 				src={new URL(product.imageUrl, Astro.url).href}

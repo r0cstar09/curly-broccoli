@@ -38,7 +38,19 @@ export interface Props {
 		</ul>
 		<ul class="flex flex-wrap gap-2" aria-label="Social links">
 			<li>
+				<SocialIconLink name="Bluesky" icon="bluesky" href="https://bsky.app/profile/astrodotbuild.bsky.social" />
+			</li>
+			<li>
 				<SocialIconLink name="Discord" icon="discord" href="https://astro.build/chat" />
+			</li>
+			<li>
+				<SocialIconLink name="GitHub" icon="github" href="https://github.com/withastro/astro" />
+			</li>
+			<li>
+				<SocialIconLink name="Mastodon" icon="mastodon" href="https://m.webtoo.ls/@astro" />
+			</li>
+			<li>
+				<SocialIconLink name="Reddit" icon="reddit" href="https://www.reddit.com/r/withastro/" />
 			</li>
 			<li>
 				<SocialIconLink
@@ -47,22 +59,6 @@ export interface Props {
 					href="https://www.youtube.com/@astrodotbuild"
 				/>
 			</li>
-			<li>
-				<SocialIconLink
-					name="X / Twitter"
-					icon="twitter"
-					href="https://twitter.com/astrodotbuild"
-				/>
-			</li>
-			<li>
-				<SocialIconLink name="GitHub" icon="github" href="https://github.com/withastro/astro" />
-			</li>
-			<li>
-				<SocialIconLink name="Reddit" icon="reddit" href="https://www.reddit.com/r/withastro/" />
-			</li>
-			<li>
-				<SocialIconLink name="Mastodon" icon="mastodon" href="https://m.webtoo.ls/@astro" />
-			</li>
 		</ul>
 	</section>
 
@@ -70,18 +66,22 @@ export interface Props {
 
 	<section class="flex flex-wrap justify-between gap-y-2 py-6 text-sm text-theme-base-600">
 		<p>
-			{'© 2024 | '}
-			<ExternalLink href="https://astro.build/" target="_blank" rel="noopener noreferrer">
-				{'Astro'}
-			</ExternalLink><span>{' | All Rights Reserved.'}</span>
-			<p class="flex flex-wrap gap-x-4">
-				<ExternalLink href="https://astro.build/privacy/" target="_blank" rel="noopener noreferrer">
-					Privacy Policy
-				</ExternalLink>
-				<ExternalLink href="https://astro.build/terms/" target="_blank" rel="noopener noreferrer">
-					Terms of Service
-				</ExternalLink>
-			</p>
+			{'© 2026 | '}
+			<a href="/" class="text-theme-base-600 underline underline-offset-2 hover:text-theme-base-900">
+				Gitmo
+			</a>
+			{' | All rights reserved'}
+		</p>
+		<p class="flex flex-wrap gap-x-4">
+			<a href="/shipping" class="text-theme-base-600 underline underline-offset-2 hover:text-theme-base-900">
+				Shipping Policy
+			</a>
+			<a href="/privacy" class="text-theme-base-600 underline underline-offset-2 hover:text-theme-base-900">
+				Privacy Policy
+			</a>
+			<a href="/terms" class="text-theme-base-600 underline underline-offset-2 hover:text-theme-base-900">
+				Terms of Service
+			</a>
 		</p>
 	</section>
 </footer>

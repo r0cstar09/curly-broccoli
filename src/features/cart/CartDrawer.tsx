@@ -1,11 +1,11 @@
 import { createQuery } from '@tanstack/solid-query';
+import { RiFinanceShoppingCartLine } from 'solid-icons/ri';
 import { Show } from 'solid-js';
 import { Button } from '~/components/ui/Button.tsx';
 import { Drawer } from '~/components/ui/Drawer.tsx';
 import { CartSummary } from '~/features/cart/CartSummary.tsx';
 import { cartQueryOptions } from '~/features/cart/cart.queries.ts';
 import { queryClient } from '~/lib/query.ts';
-import { CartButton } from './CartButton.tsx';
 import { CartStore } from './store.ts';
 
 export function CartDrawer() {
@@ -14,12 +14,23 @@ export function CartDrawer() {
 		() => queryClient,
 	);
 
+	const itemCount = () => query.data?.items.reduce((total, item) => total + item.quantity, 0) ?? 0;
+
 	return (
 		<Drawer
 			title="Cart"
 			open={CartStore.drawerOpen}
 			onOpenChange={CartStore.setDrawerOpen}
-			trigger={<CartButton as="div" />}
+			trigger={
+				<button
+					type="button"
+					onClick={() => CartStore.setDrawerOpen(true)}
+					class="flex items-center gap-2 rounded border border-theme-base-200 bg-theme-base-100 px-4 py-2 text-theme-base-900 transition hover:border-theme-base-400 hover:bg-theme-base-200"
+				>
+					<RiFinanceShoppingCartLine class="size-5" />
+					<span>Cart {itemCount()}</span>
+				</button>
+			}
 		>
 			<div class="flex h-full flex-col py-4">
 				<CartSummary />
