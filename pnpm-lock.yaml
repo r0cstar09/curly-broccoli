@@ -20,9 +20,6 @@ importers:
       '@fontsource-variable/exo-2':
         specifier: ^5.2.8
         version: 5.2.8
-      '@fontsource-variable/inter':
-        specifier: 5.0.18
-        version: 5.0.18
       '@fontsource-variable/orbitron':
         specifier: ^5.2.8
         version: 5.2.8
@@ -856,9 +853,6 @@ packages:
 
   '@fontsource-variable/exo-2@5.2.8':
     resolution: {integrity: sha512-P3k8XX+RE1E8QA4/EpR0wSmcvenHjYd7NUNbPNH8iUSA9mGDkPVxE6cxOsx7ksRKY1p0R1ExndDNTpzwwLgkVg==}
-
-  '@fontsource-variable/inter@5.0.18':
-    resolution: {integrity: sha512-rJzSrtJ3b7djiGFvRuTe6stDfbYJGhdQSfn2SI2WfXviee7Er0yKAHE5u7FU7OWVQQQ1x3+cxdmx9NdiAkcrcA==}
 
   '@fontsource-variable/orbitron@5.2.8':
     resolution: {integrity: sha512-Jazvuj2cgBq663z1j/+JdwH2ztqQ8RaGhJgdHYphFbtfowiFaR74R8UgZl7x1skbXmUMWWH1jXfG7mrYFIYK0A==}
@@ -5634,8 +5628,6 @@ snapshots:
   '@floating-ui/utils@0.2.7': {}
 
   '@fontsource-variable/exo-2@5.2.8': {}
-
-  '@fontsource-variable/inter@5.0.18': {}
 
   '@fontsource-variable/orbitron@5.2.8': {}
 
