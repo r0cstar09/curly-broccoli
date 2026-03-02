@@ -223,7 +223,7 @@ const products: Record<string, Product> = {
 		collectionIds: ['creativeCloud'],
 		variants: [defaultVariant],
 	},
-	acrobat-pro: {
+	'acrobat-pro': {
 		...productDefaults,
 		id: 'acrobat-pro',
 		name: 'Adobe Acrobat Pro',
@@ -234,7 +234,7 @@ const products: Record<string, Product> = {
 		collectionIds: ['documentCloud', 'bestSellers'],
 		variants: [defaultVariant],
 	},
-	premiere-pro: {
+	'premiere-pro': {
 		...productDefaults,
 		id: 'premiere-pro',
 		name: 'Adobe Premiere Pro',
@@ -245,7 +245,7 @@ const products: Record<string, Product> = {
 		collectionIds: ['creativeCloud'],
 		variants: [defaultVariant],
 	},
-	after-effects: {
+	'after-effects': {
 		...productDefaults,
 		id: 'after-effects',
 		name: 'Adobe After Effects',
@@ -267,7 +267,7 @@ const products: Record<string, Product> = {
 		collectionIds: ['creativeCloud', 'bestSellers'],
 		variants: [defaultVariant],
 	},
-	creative-cloud-all-apps: {
+	'creative-cloud-all-apps': {
 		...productDefaults,
 		id: 'creative-cloud-all-apps',
 		name: 'Adobe Creative Cloud All Apps',

@@ -28,9 +28,8 @@ export default defineConfig({
 			'placehold.co',
 		],
 	},
-	experimental: {
-		env: {
-			schema: {
+	env: {
+		schema: {
 				STRIPE_SECRET_KEY: envField.string({
 					context: 'server',
 					access: 'secret',
@@ -93,7 +92,6 @@ export default defineConfig({
 					access: 'secret',
 					optional: true,
 				}),
-			},
 		},
 	},
 });
