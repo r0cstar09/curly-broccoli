@@ -89,7 +89,7 @@ export function AddToCartForm(props: { product: Product }) {
 				<For each={[...productOptionValues().entries()]}>
 					{([option, values]) => (
 						<fieldset>
-							<legend class="mb-1 text-theme-base-700">{option ?? 'Variants'}</legend>
+							<legend class="mb-1 text-theme-base-300">{option ?? 'Variants'}</legend>
 							<Show when={unpickedVariantVisible() && !selectedVariant()}>
 								<p role="alert" class="mb-2 text-sm text-red-400">
 									Please make a selection.
@@ -125,7 +125,7 @@ export function AddToCartForm(props: { product: Product }) {
 			</Show>
 
 			<div class="mb-2">
-				<label for="quantity" class="mb-2 block text-theme-base-700">
+				<label for="quantity" class="mb-2 block text-theme-base-300">
 					Quantity
 				</label>
 				<NumberInput id="quantity" min={1} value={quantity()} setValue={setQuantity} />

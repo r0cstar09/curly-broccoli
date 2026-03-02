@@ -28,10 +28,10 @@ export interface Props {
 					/>
 				)
 			}
-			<p class="text-pretty text-3xl font-semibold">
+			<p class="text-pretty text-3xl font-semibold text-theme-base-100">
 				{Astro.props.name}
 			</p>
-			<p class={button()}>
+			<p class={button({ theme: 'dark' })}>
 				{Astro.props.cta ?? 'Shop now'}
 			</p>
 		</article>

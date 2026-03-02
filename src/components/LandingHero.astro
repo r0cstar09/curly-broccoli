@@ -1,36 +1,21 @@
 ---
-import sm from '~/assets/hero-banner-sm.webp';
-import md from '~/assets/hero-banner-md.webp';
-import lg from '~/assets/hero-banner-lg.webp';
-import xl from '~/assets/hero-banner-xl.webp';
-import twoXl from '~/assets/hero-banner-2xl.webp';
 import { button } from '~/styles.ts';
 ---
 
 <header
-	class="breakout focus-ring-light relative h-[384px] max-h-dvh content-end justify-items-start gap-y-4 bg-theme-accent-950 py-8 text-white md:h-[512px] md:gap-y-8 md:bg-bottom"
+	class="breakout focus-ring-light relative flex min-h-[50vh] flex-col items-center justify-center gap-6 bg-theme-accent-950 py-16 text-white md:min-h-[60vh] md:gap-8 md:py-24"
 >
-	<picture>
-		<source srcset={sm.src} media="(max-width: 640px)" />
-		<source srcset={md.src} media="(max-width: 768px)" />
-		<source srcset={lg.src} media="(max-width: 1024px)" />
-		<source srcset={xl.src} media="(max-width: 1280px)" />
-		<source srcset={twoXl.src} media="(min-width: 1281px)" />
-		<img
-			src={twoXl.src}
-			alt=""
-			class="breakout absolute inset-0 size-full object-cover object-right-bottom"
-		/>
-	</picture>
-	<div
-		class="content relative text-4xl font-extrabold drop-shadow-md md:text-5xl md:leading-[50px]"
-	>
-		<h1 class="max-w-sm">Shop the best software.</h1>
+	<div class="content text-center">
+		<h1 class="text-4xl font-extrabold tracking-tight md:text-6xl md:leading-tight">
+			Time to suit up, Developer.
+		</h1>
 	</div>
-	<div class="relative">
-		<button
-			class={button({ theme: 'light', className: 'font-bold md:h-12 md:text-lg' })}
-			onclick="scrollIntoView('#products')">Shop now</button
+	<div>
+		<a
+			href="#products"
+			class={button({ theme: 'light', className: 'font-bold md:h-12 md:px-6 md:text-lg' })}
 		>
+			Shop now
+		</a>
 	</div>
 </header>

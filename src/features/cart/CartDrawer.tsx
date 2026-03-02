@@ -25,7 +25,7 @@ export function CartDrawer() {
 				<button
 					type="button"
 					onClick={() => CartStore.setDrawerOpen(true)}
-					class="flex items-center gap-2 rounded border border-theme-accent-200 bg-white px-4 py-2 text-theme-accent-700 transition hover:border-theme-accent-400 hover:bg-theme-accent-50"
+					class="flex items-center gap-2 rounded border border-theme-accent-600 bg-theme-accent-600 px-4 py-2 text-white transition hover:bg-theme-accent-700 hover:border-theme-accent-700"
 				>
 					<RiFinanceShoppingCartLine class="size-5" />
 					<span>Cart {itemCount()}</span>
@@ -39,7 +39,7 @@ export function CartDrawer() {
 						<Button type="submit">Checkout</Button>
 					</form>
 				</Show>
-				<aside class="mt-3 text-balance text-center text-sm font-medium text-theme-base-500">
+				<aside class="mt-3 text-balance text-center text-sm font-medium text-theme-base-400">
 					Discount and shipping will be calculated on the checkout page.
 				</aside>
 			</div>

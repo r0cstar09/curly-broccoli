@@ -38,13 +38,13 @@ export function CartSummary() {
 			</ul>
 			<Show when={query.data.items.length > 0}>
 				<dl class="grid grid-cols-[auto,1fr] gap-3 py-3 [&>dd]:text-right">
-					{/* <dt class="font-normal text-theme-base-600">Subtotal</dt>
-					<dd class="font-medium text-theme-base-700">{formatProductPrice(subtotal())}</dd>
-					<dt class="font-normal text-theme-base-600">Discount</dt>
-					<dd class="font-medium text-theme-base-700">{formatProductPrice(discount())}</dd>
+					{/* <dt class="font-normal text-theme-base-400">Subtotal</dt>
+					<dd class="font-medium text-theme-base-100">{formatProductPrice(subtotal())}</dd>
+					<dt class="font-normal text-theme-base-400">Discount</dt>
+					<dd class="font-medium text-theme-base-100">{formatProductPrice(discount())}</dd>
 					<hr class="col-span-2 border-t border-slate-200" /> */}
-					<dt class="my-2 text-lg font-normal text-theme-base-600">Subtotal</dt>
-					<dd class="my-2 text-xl font-medium text-theme-base-700" data-testid="cart-total">
+					<dt class="my-2 text-lg font-normal text-theme-base-400">Subtotal</dt>
+					<dd class="my-2 text-xl font-medium text-theme-base-100" data-testid="cart-total">
 						{formatProductPrice(subtotal())}
 					</dd>
 				</dl>

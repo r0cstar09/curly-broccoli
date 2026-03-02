@@ -22,12 +22,12 @@ const { address, location } = Astro.props;
 		)
 	}
 	<div>
-		<h2 class="mb-2 text-lg font-semibold">Your order is confirmed</h2>
-		<p>You'll receive an email confirmation shortly.</p>
+		<h2 class="mb-2 text-lg font-semibold text-theme-base-100">Your order is confirmed</h2>
+		<p class="text-theme-base-300">You'll receive an email confirmation shortly.</p>
 	</div>
 	<div>
-		<h3 class="mb-2 text-theme-base-600">Shipping address</h3>
-		<address class="font-semibold not-italic">
+		<h3 class="mb-2 text-theme-base-400">Shipping address</h3>
+		<address class="font-semibold not-italic text-theme-base-200">
 			<p>{address.line1}</p>
 			{address.line2 && <p>{address.line2}</p>}
 			<p>

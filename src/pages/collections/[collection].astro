@@ -44,15 +44,15 @@ const products = productsResponse.data.items.filter((product) => {
 		<SideColumnLayout class="flex flex-wrap gap-4">
 			<div slot="aside" class="flex flex-col gap-4 py-4">
 				<header>
-					<h2 class="text-2xl font-bold">
+					<h2 class="text-2xl font-bold text-theme-base-100">
 						{collection.name}
 					</h2>
-					<p class="text-sm font-medium text-theme-base-600">
+					<p class="text-sm font-medium text-theme-base-400">
 						{products.length} products
 					</p>
 				</header>
 				<nav class="flex flex-col gap-2" aria-labelledby="sort-by-heading">
-					<h3 id="sort-by-heading" class="font-semibold">Sort by</h3>
+					<h3 id="sort-by-heading" class="font-semibold text-theme-base-200">Sort by</h3>
 					<ul class="contents">
 						<li>
 							<CheckboxLink href={`?sort=price&order=asc`} label="Price: Low to High" />

@@ -20,15 +20,15 @@ export function Drawer(props: {
 			<Dialog.Trigger>{props.trigger}</Dialog.Trigger>
 			<Dialog.Portal>
 				<Dialog.Overlay class="fixed inset-0 bg-black/25 ui-expanded:animate-in ui-expanded:fade-in ui-closed:animate-out ui-closed:fade-out" />
-				<Dialog.Content class="fixed inset-y-0 right-0 flex w-[min(560px,100vw)] flex-col bg-white ease-out ui-expanded:animate-in ui-expanded:fade-in ui-expanded:slide-in-from-right-4 ui-closed:animate-out ui-closed:fade-out ui-closed:slide-out-to-right-4">
+				<Dialog.Content class="fixed inset-y-0 right-0 flex w-[min(560px,100vw)] flex-col bg-theme-base-900 ease-out ui-expanded:animate-in ui-expanded:fade-in ui-expanded:slide-in-from-right-4 ui-closed:animate-out ui-closed:fade-out ui-closed:slide-out-to-right-4">
 					<header class="flex h-14 flex-row items-center justify-between px-4">
-						<Dialog.Title class="text-2xl font-bold">{props.title}</Dialog.Title>
-						<Dialog.CloseButton class="size-9 border border-theme-accent-200 bg-theme-accent-50 text-theme-accent-700 transition grid-center hover:border-theme-accent-400 hover:bg-theme-accent-100">
+						<Dialog.Title class="text-2xl font-bold text-theme-base-100">{props.title}</Dialog.Title>
+						<Dialog.CloseButton class="size-9 border border-theme-base-600 bg-theme-base-800 text-theme-base-200 transition grid-center hover:border-theme-accent-500 hover:bg-theme-base-700">
 							<RiSystemCloseLine />
 							<span class="sr-only">Dismiss</span>
 						</Dialog.CloseButton>
 					</header>
-					<div class="border-b border-theme-accent-200" />
+					<div class="border-b border-theme-base-700" />
 					<main class="flex-1 overflow-y-auto px-6">{props.children}</main>
 				</Dialog.Content>
 			</Dialog.Portal>

@@ -34,11 +34,11 @@ export default function ProductCarouselSection(
 			<div class="flex items-center justify-between gap-2">
 				<PageHeading id={HEADING_ID}>{props.heading}</PageHeading>
 				<div class="flex gap-2">
-					<SquareIconButton onClick={() => scroll(-1)} disabled={scrollStatus() === 'start'}>
+					<SquareIconButton theme="dark" onClick={() => scroll(-1)} disabled={scrollStatus() === 'start'}>
 						<RiArrowsArrowLeftLine />
 						<span class="sr-only">Scroll left</span>
 					</SquareIconButton>
-					<SquareIconButton onClick={() => scroll(1)} disabled={scrollStatus() === 'end'}>
+					<SquareIconButton theme="dark" onClick={() => scroll(1)} disabled={scrollStatus() === 'end'}>
 						<RiArrowsArrowRightLine />
 						<span class="sr-only">Scroll right</span>
 					</SquareIconButton>

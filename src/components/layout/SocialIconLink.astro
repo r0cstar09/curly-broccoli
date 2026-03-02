@@ -13,9 +13,9 @@ const { name, icon, class: className = '', ...props } = Astro.props;
 ---
 
 <ExternalLink
-	class=`inline-block size-10 grid-center hover:bg-theme-base-200 rounded transition ${className}`
+	class=`inline-block size-10 grid-center hover:bg-theme-base-700 rounded transition ${className}`
 	{...props}
 >
-	<Icon name={icon} title={name} class="size-6 text-theme-accent-600 hover:text-theme-accent-700" aria-hidden="true" />
+	<Icon name={icon} title={name} class="size-6 text-theme-accent-400 hover:text-theme-accent-300" aria-hidden="true" />
 	<span class="sr-only">{name}</span>
 </ExternalLink>

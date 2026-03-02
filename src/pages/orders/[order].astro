@@ -76,14 +76,14 @@ if (!order.shippingAddress) {
 ---
 
 <PrimaryLayout title="Thanks for your order">
-	<div class="mx-auto flex w-full max-w-prose flex-col gap-y-2 text-theme-base-900">
+	<div class="mx-auto flex w-full max-w-prose flex-col gap-y-2 text-theme-base-100">
 		<header class="flex flex-col gap-4 py-8">
 			<img
 				src={successIcon.src}
 				alt="Checkmark on receipt with sparkles"
 				class="mx-auto h-24 w-24"
 			/>
-			<h1 class="text-center text-xl font-bold">
+			<h1 class="text-center text-xl font-bold text-theme-base-100">
 				{
 					order.customerName
 						? `Thank you for your order, ${order.customerName}!`
@@ -96,7 +96,7 @@ if (!order.shippingAddress) {
 				<Shipping address={order.shippingAddress} location={geoLocation} />
 			)
 		}
-		<h2 class="mb-4 mt-8 text-lg font-bold">Items in your order</h2>
+		<h2 class="mb-4 mt-8 text-lg font-bold text-theme-base-100">Items in your order</h2>
 		<ul>
 			{
 				(order.lineItems as LineItem[])?.map(({ quantity, productVariant }) => (
@@ -110,9 +110,9 @@ if (!order.shippingAddress) {
 							<div class="flex flex-1 flex-col gap-1">
 								<h3>{productVariant.product.name}</h3>
 								<div class="flex flex-wrap gap-1">
-									<p class="text-theme-base-700">Quantity: {quantity}</p>
+									<p class="text-theme-base-300">Quantity: {quantity}</p>
 									{Object.entries(productVariant.options).map(([option, value]) => (
-										<p class="text-theme-base-700 before:text-theme-base-500 before:content-['•']">
+										<p class="text-theme-base-300 before:text-theme-base-400 before:content-['•']">
 											{option}: {value}
 										</p>
 									))}
@@ -120,11 +120,11 @@ if (!order.shippingAddress) {
 							</div>
 							{productVariant.product.discount > 0 ? (
 								<p class="">
-									<span class="text-theme-base-500 line-through">
+									<span class="text-theme-base-400 line-through">
 										{formatProductPrice(productVariant.product.price * quantity)}
 									</span>
 									<br />
-									<span class="text-theme-base-700">
+									<span class="text-theme-base-300">
 										{formatProductPrice(
 											(productVariant.product.price - productVariant.product.discount) * quantity,
 										)}
