@@ -56,6 +56,7 @@
 		"astro": "^5.18.0",
 		"astro-icon": "^1.1.1",
 		"solid-icons": "^1.1.0",
+		"sharp": "^0.34.5",
 		"solid-js": "^1.8.19",
 		"stripe": "16.6.0",
 		"tailwind-merge": "2.4.0",
