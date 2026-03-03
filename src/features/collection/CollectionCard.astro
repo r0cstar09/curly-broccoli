@@ -10,22 +10,24 @@ export interface Props {
 }
 ---
 
-<Card>
-	<a href={`/collections/${Astro.props.slug}`} class="w-full">
+<Card class="overflow-hidden rounded-lg shadow-md transition-all duration-300 ease-out hover:shadow-glow hover:-translate-y-1 group">
+	<a href={`/collections/${Astro.props.slug}`} class="block w-full">
 		<article class="flex flex-col items-start gap-3 p-6">
 			{
 				Astro.props.imageUrl && (
-					<img
-						src={Astro.props.imageUrl.startsWith('/') ? Astro.props.imageUrl : new URL(Astro.props.imageUrl, Astro.url.origin).href}
-						alt=""
-						class="aspect-square size-full object-cover self-center"
-						loading="lazy"
-						width={390}
-						height={390}
-					/>
+					<div class="overflow-hidden rounded-lg">
+						<img
+							src={Astro.props.imageUrl.startsWith('/') ? Astro.props.imageUrl : new URL(Astro.props.imageUrl, Astro.url.origin).href}
+							alt=""
+							class="aspect-square size-full object-cover self-center transition-transform duration-500 ease-out group-hover:scale-110"
+							loading="lazy"
+							width={390}
+							height={390}
+						/>
+					</div>
 				)
 			}
-			<p class="text-pretty text-3xl font-semibold text-theme-base-100">
+			<p class="text-pretty text-3xl font-semibold text-theme-base-100 transition-colors duration-300 group-hover:text-theme-accent-300">
 				{Astro.props.name}
 			</p>
 			<p class={button({ theme: 'dark' })}>

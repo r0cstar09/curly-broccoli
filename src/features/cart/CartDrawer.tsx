@@ -25,7 +25,7 @@ export function CartDrawer() {
 				<button
 					type="button"
 					onClick={() => CartStore.setDrawerOpen(true)}
-					class="flex items-center gap-2 rounded border border-theme-accent-600 bg-theme-accent-600 px-4 py-2 text-white transition hover:bg-theme-accent-700 hover:border-theme-accent-700"
+					class="flex items-center gap-2 rounded border border-theme-accent-600 bg-theme-accent-600 px-4 py-2 text-white transition-all duration-200 ease-out hover:scale-[1.02] hover:bg-theme-accent-700 hover:border-theme-accent-700 active:scale-[0.98]"
 				>
 					<RiFinanceShoppingCartLine class="size-5" />
 					<span>Cart {itemCount()}</span>

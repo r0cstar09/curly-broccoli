@@ -11,15 +11,20 @@ import { button } from '~/styles.ts';
 		class="absolute inset-0 size-full object-cover object-center"
 	/>
 	<div class="absolute inset-0 bg-theme-accent-950/40" aria-hidden="true"></div>
-	<div class="content relative z-10 text-center">
-		<h1 class="font-display text-4xl font-extrabold tracking-tight text-white drop-shadow-sm md:text-6xl md:leading-tight">
+	<div class="content relative z-10 flex flex-col items-center gap-6 text-center md:gap-8">
+		<h1
+			class="font-display text-4xl font-extrabold tracking-tight text-white drop-shadow-md animate-fade-in-up md:text-6xl md:leading-tight"
+			style="animation-delay: 0.1s; opacity: 0"
+		>
 			Time to suit up, Developer.
 		</h1>
-	</div>
-	<div class="relative z-10">
 		<a
 			href="#products"
-			class={button({ theme: 'light', className: 'font-bold md:h-12 md:px-6 md:text-lg' })}
+			class={button({
+				theme: 'light',
+				className: 'font-bold md:h-12 md:px-6 md:text-lg animate-fade-in-up',
+			})}
+			style="animation-delay: 0.3s; opacity: 0"
 		>
 			Shop now
 		</a>

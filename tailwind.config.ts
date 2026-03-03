@@ -14,6 +14,24 @@ export default {
 				sans: ['Exo 2 Variable', ...fontFamily.sans],
 				display: ['Orbitron Variable', ...fontFamily.sans],
 			},
+			animation: {
+				'fade-in-up': 'fade-in-up 0.6s ease-out forwards',
+				'fade-in': 'fade-in 0.5s ease-out forwards',
+			},
+			keyframes: {
+				'fade-in-up': {
+					'0%': { opacity: '0', transform: 'translateY(12px)' },
+					'100%': { opacity: '1', transform: 'translateY(0)' },
+				},
+				'fade-in': {
+					'0%': { opacity: '0' },
+					'100%': { opacity: '1' },
+				},
+			},
+			boxShadow: {
+				'glow':
+					'0 25px 50px -12px rgb(0 0 0 / 0.25), 0 0 20px -5px rgb(139 92 246 / 0.35)',
+			},
 			colors: {
 				theme: {
 					base: colors.slate,

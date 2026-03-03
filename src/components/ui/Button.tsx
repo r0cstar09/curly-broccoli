@@ -13,10 +13,10 @@ export function Button(props: Props) {
 			{...props}
 			type={props.type ?? 'button'}
 			class={twMerge(
-				'flex h-12 items-center justify-center gap-3 bg-theme-accent-600 px-4 text-sm font-semibold uppercase text-white transition ',
+				'flex h-12 items-center justify-center gap-3 bg-theme-accent-600 px-4 text-sm font-semibold uppercase text-white transition-all duration-200 ease-out',
 				props.class,
 				(props.disabled || props.pending) && 'opacity-50',
-				!props.disabled && 'hover:bg-theme-accent-700',
+				!props.disabled && 'hover:bg-theme-accent-700 hover:scale-[1.02] active:scale-[0.98]',
 			)}
 		>
 			{props.pending ? <RiSystemLoader2Line class="animate-spin" /> : props.children}
@@ -48,7 +48,7 @@ export function SquareIconButton(props: SquareIconButtonProps) {
 				'bg-theme-base-800 border-theme-base-700 text-theme-base-100 hover:enabled:border-theme-base-700 hover:enabled:bg-theme-base-800':
 					theme() === 'dark',
 			}}
-			class={`size-9 border transition grid-center data-[icon]:*:size-6 ${props.class ?? ''}`}
+			class={`size-9 border transition-all duration-200 grid-center data-[icon]:*:size-6 hover:enabled:scale-105 ${props.class ?? ''}`}
 		>
 			{props.children}
 		</Dynamic>
