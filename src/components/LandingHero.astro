@@ -3,30 +3,76 @@ import { button } from '~/styles.ts';
 ---
 
 <header
-	class="breakout focus-ring-light relative flex min-h-[50vh] flex-col items-center justify-center gap-6 overflow-hidden bg-theme-accent-950 py-16 text-white md:min-h-[60vh] md:gap-8 md:py-24"
+	class="breakout astro-shop-surface focus-ring-light relative overflow-hidden border-b border-white/10 bg-theme-base-950 text-white"
 >
-	<img
-		src="/assets/hero-image-for-site.png"
-		alt=""
-		class="absolute inset-0 size-full object-cover object-center"
-	/>
-	<div class="absolute inset-0 bg-theme-accent-950/40" aria-hidden="true"></div>
-	<div class="content relative z-10 flex flex-col items-center gap-6 text-center md:gap-8">
-		<h1
-			class="font-display text-4xl font-extrabold tracking-tight text-white drop-shadow-md animate-fade-in-up md:text-6xl md:leading-tight"
-			style="animation-delay: 0.1s; opacity: 0"
+	<div
+		class="absolute left-[-10rem] top-[-12rem] size-[34rem] rounded-full bg-theme-accent-600/30 blur-3xl"
+		aria-hidden="true"
+	>
+	</div>
+	<div
+		class="absolute bottom-[-16rem] right-[-8rem] size-[38rem] rounded-full bg-rose-500/20 blur-3xl"
+		aria-hidden="true"
+	>
+	</div>
+	<div
+		class="content relative z-10 grid min-h-[64vh] items-center gap-12 py-16 md:min-h-[72vh] md:grid-cols-[0.9fr_1.1fr] md:py-24"
+	>
+		<div class="flex flex-col items-start gap-7 text-left">
+			<h1
+				class="max-w-4xl animate-fade-in-up text-balance font-display text-5xl font-black leading-[0.95] tracking-[-0.04em] text-white drop-shadow-[0_22px_44px_rgb(0_0_0_/_0.45)] sm:text-6xl md:text-7xl xl:text-8xl"
+				style="animation-delay: 0.1s; opacity: 0"
+			>
+				Time to suit up, Developer.
+			</h1>
+			<a
+				href="#products"
+				class={button({
+					theme: 'light',
+					className: 'animate-fade-in-up font-bold md:h-12 md:px-7 md:text-base',
+				})}
+				style="animation-delay: 0.3s; opacity: 0"
+			>
+				Shop now
+			</a>
+		</div>
+
+		<div
+			class="relative min-h-[24rem] animate-fade-in-up md:min-h-[34rem]"
+			style="animation-delay: 0.2s; opacity: 0"
+			aria-hidden="true"
 		>
-			Time to suit up, Developer.
-		</h1>
-		<a
-			href="#products"
-			class={button({
-				theme: 'light',
-				className: 'font-bold md:h-12 md:px-6 md:text-lg animate-fade-in-up',
-			})}
-			style="animation-delay: 0.3s; opacity: 0"
-		>
-			Shop now
-		</a>
+			<div
+				class="absolute inset-8 animate-orbit-pulse rounded-full border border-theme-accent-300/20 bg-theme-accent-500/10 blur-sm"
+			>
+			</div>
+			<div
+				class="absolute left-4 top-8 size-24 animate-float rounded-3xl border border-white/10 bg-white/[0.06] shadow-astro-card backdrop-blur-md"
+			>
+			</div>
+			<div
+				class="absolute bottom-12 right-2 size-28 animate-orbit-pulse rounded-full border border-white/10 bg-rose-400/20 blur-[1px]"
+			>
+			</div>
+			<div
+				class="group absolute inset-x-0 top-1/2 mx-auto aspect-[4/5] max-w-[31rem] -translate-y-1/2 rotate-2 overflow-hidden rounded-[2rem] border border-white/15 bg-theme-base-900/70 p-3 shadow-astro-card backdrop-blur-xl transition duration-500 hover:rotate-0 hover:scale-[1.015]"
+			>
+				<div
+					class="pointer-events-none absolute inset-y-0 left-0 z-20 w-1/3 bg-white/20 opacity-0 blur-xl transition-opacity duration-300 group-hover:animate-sheen group-hover:opacity-100"
+				>
+				</div>
+				<img
+					src="/assets/hero-image-for-site.png"
+					alt=""
+					class="saturate-125 size-full rounded-[1.4rem] object-cover object-center transition duration-700 group-hover:scale-105"
+					loading="eager"
+					draggable="false"
+				/>
+				<div
+					class="absolute inset-3 rounded-[1.4rem] bg-gradient-to-t from-theme-base-950/70 via-transparent to-white/10"
+				>
+				</div>
+			</div>
+		</div>
 	</div>
 </header>

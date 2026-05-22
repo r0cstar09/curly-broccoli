@@ -3,6 +3,21 @@
 @tailwind utilities;
 
 @layer base {
+	html {
+		scroll-behavior: smooth;
+	}
+
+	body {
+		background: radial-gradient(circle at 12% -10%, rgb(124 58 237 / 0.38), transparent 32rem),
+			radial-gradient(circle at 88% 6%, rgb(244 63 94 / 0.2), transparent 28rem),
+			linear-gradient(
+				180deg,
+				theme('colors.theme.base.950') 0%,
+				theme('colors.theme.base.900') 48%,
+				#080b14 100%
+			);
+	}
+
 	:focus {
 		outline: none;
 	}
@@ -22,6 +37,10 @@
 
 	.focus-ring-inset {
 		@apply ring-inset ring-offset-0;
+	}
+
+	::selection {
+		@apply bg-theme-accent-500 text-white;
 	}
 }
 
@@ -94,5 +113,29 @@
 			grid-column: content-right;
 			justify-self: end;
 		}
+	}
+
+	.astro-shop-surface {
+		position: relative;
+		isolation: isolate;
+	}
+
+	.astro-shop-surface::before {
+		position: absolute;
+		inset: 0;
+		z-index: -1;
+		content: '';
+		background-image: linear-gradient(rgb(255 255 255 / 0.045) 1px, transparent 1px),
+			linear-gradient(90deg, rgb(255 255 255 / 0.045) 1px, transparent 1px);
+		background-size: 72px 72px;
+		mask-image: linear-gradient(to bottom, rgb(0 0 0 / 0.85), transparent 72%);
+	}
+
+	.no-scrollbar {
+		scrollbar-width: none;
+	}
+
+	.no-scrollbar::-webkit-scrollbar {
+		display: none;
 	}
 }

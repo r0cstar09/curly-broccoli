@@ -17,7 +17,7 @@ const { heading = 'Shop by collection' } = Astro.props;
 
 <PageSection aria-labelledby={HEADING_ID}>
 	<PageHeading id={HEADING_ID}>{heading}</PageHeading>
-	<div class="grid gap-4 sm:grid-cols-[repeat(auto-fit,minmax(16rem,1fr))]">
+	<div class="grid gap-5 sm:grid-cols-[repeat(auto-fit,minmax(17rem,1fr))]">
 		{
 			collections.map(
 				(collection) =>
@@ -28,7 +28,7 @@ const { heading = 'Shop by collection' } = Astro.props;
 	<p class="mt-4">
 		<a
 			href={collections[0]?.slug ? `/collections/${collections[0].slug}` : '/'}
-			class="text-theme-accent-400 underline underline-offset-2 hover:text-theme-accent-300"
+			class="inline-flex rounded-full border border-white/10 bg-white/[0.04] px-4 py-2 text-sm font-semibold uppercase tracking-[0.12em] text-theme-accent-200 transition duration-300 hover:-translate-y-0.5 hover:border-theme-accent-400/50 hover:bg-theme-accent-500/10 hover:text-white"
 		>
 			View all products
 		</a>

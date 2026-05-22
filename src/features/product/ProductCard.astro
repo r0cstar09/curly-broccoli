@@ -13,14 +13,16 @@ interface Props extends Product {
 }
 
 const { class: className, elementId, imageLoading, ...product } = Astro.props;
-const imageSrc = product.imageUrl.startsWith('/') ? product.imageUrl : new URL(product.imageUrl, Astro.url).href;
+const imageSrc = product.imageUrl.startsWith('/')
+	? product.imageUrl
+	: new URL(product.imageUrl, Astro.url).href;
 ---
 
 <a
 	href={productPath(product.slug)}
 	class={twMerge(
-		`group relative block w-full focus-visible:ring-0 transition-all duration-300 ease-out`,
-		`hover:-translate-y-1`,
+		`group relative block w-full focus-visible:ring-0 transition-all duration-500 ease-out`,
+		`hover:-translate-y-2`,
 		className,
 	)}
 	id={elementId ?? undefined}
@@ -29,29 +31,35 @@ const imageSrc = product.imageUrl.startsWith('/') ? product.imageUrl : new URL(p
 	<article class="relative">
 		{
 			(product.discount > 0 || product.collectionIds?.includes('bestSellers')) && (
-				<span class="absolute left-2 top-2 z-10 rounded bg-theme-accent-600 px-2 py-0.5 text-xs font-semibold uppercase text-white shadow-lg">
+				<span class="absolute left-3 top-3 z-10 rounded-full border border-white/20 bg-theme-accent-500/90 px-3 py-1 text-[0.65rem] font-bold uppercase tracking-[0.16em] text-white shadow-lg backdrop-blur">
 					New
 				</span>
 			)
 		}
 		<Card
-			class="flex aspect-[5/6] items-center justify-center overflow-hidden rounded-lg shadow-md transition-all duration-300 ease-out group-hover:shadow-glow group-hover:ring-2 group-hover:ring-theme-accent-400/50"
+			class="flex aspect-[5/6] items-center justify-center overflow-hidden rounded-[1.35rem] bg-gradient-to-br from-white/[0.08] via-theme-base-900 to-theme-accent-950/70 p-2 shadow-astro-card transition-all duration-500 ease-out group-hover:shadow-astro-lift group-hover:ring-2 group-hover:ring-theme-accent-400/40"
 		>
+			<div
+				class="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_30%_0%,rgb(255_255_255_/_0.18),transparent_32%)] opacity-70"
+			>
+			</div>
 			<img
 				src={imageSrc}
 				alt={product.name}
 				width={290}
 				height={348}
 				loading={imageLoading ?? 'lazy'}
-				class="size-full object-cover transition-transform duration-500 ease-out group-hover:scale-110"
+				class="relative z-10 size-full rounded-[1rem] object-cover transition-transform duration-700 ease-out group-hover:scale-110"
 				draggable="false"
 			/>
 		</Card>
-		<div class="flex flex-col gap-2 p-2 font-medium transition-colors duration-300">
-			<h3 class="text-pretty leading-tight text-theme-base-100 group-hover:text-theme-accent-300">
+		<div class="flex flex-col gap-2 px-2 py-3 font-medium transition-colors duration-300">
+			<h3
+				class="text-pretty leading-tight text-theme-base-100 transition-colors duration-300 group-hover:text-theme-accent-200"
+			>
 				{product.name}
 			</h3>
-			<p class="text-lg/tight text-theme-base-400">
+			<p class="text-lg/tight text-theme-base-300">
 				<ProductPrice price={product.price} discount={product.discount} />
 			</p>
 		</div>

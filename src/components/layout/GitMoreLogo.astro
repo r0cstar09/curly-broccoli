@@ -1,0 +1,53 @@
+---
+export interface Props {
+	class?: string;
+}
+---
+
+<svg
+	class={Astro.props.class}
+	viewBox="0 0 184 48"
+	fill="none"
+	xmlns="http://www.w3.org/2000/svg"
+	aria-hidden="true"
+>
+	<defs>
+		<linearGradient id="gitmore-mark" x1="10" y1="42" x2="44" y2="8" gradientUnits="userSpaceOnUse">
+			<stop stop-color="#f97316"></stop>
+			<stop offset="0.52" stop-color="#f43f5e"></stop>
+			<stop offset="1" stop-color="#a855f7"></stop>
+		</linearGradient>
+		<linearGradient
+			id="gitmore-word"
+			x1="58"
+			y1="38"
+			x2="174"
+			y2="12"
+			gradientUnits="userSpaceOnUse"
+		>
+			<stop stop-color="#ffffff"></stop>
+			<stop offset="1" stop-color="#c4b5fd"></stop>
+		</linearGradient>
+	</defs>
+	<path d="M24 4 4 24l20 20 20-20L24 4Z" fill="#0f172a" stroke="url(#gitmore-mark)" stroke-width="3"
+	></path>
+	<circle cx="17" cy="24" r="3.5" fill="#fff"></circle>
+	<circle cx="30.5" cy="17.5" r="3.5" fill="#fff"></circle>
+	<circle cx="31" cy="31" r="3.5" fill="#fff"></circle>
+	<path
+		d="M20.5 22.4 27 19.4M20.4 25.7 27.7 29.3"
+		stroke="#c4b5fd"
+		stroke-width="2.4"
+		stroke-linecap="round"></path>
+	<text
+		x="58"
+		y="32"
+		fill="url(#gitmore-word)"
+		font-family="'Orbitron Variable', Orbitron, sans-serif"
+		font-size="24"
+		font-weight="800"
+		letter-spacing="0.02em"
+	>
+		Gitmo
+	</text>
+</svg>

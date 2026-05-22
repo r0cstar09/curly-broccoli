@@ -8,9 +8,11 @@ export function button({
 	className?: ClassNameValue;
 } = {}) {
 	return twMerge(
-		theme === 'dark' && 'bg-theme-accent-600 hover:bg-theme-accent-700 hover:scale-[1.02] active:scale-[0.98] text-white',
-		theme === 'light' && 'bg-white hover:bg-theme-accent-50 hover:scale-[1.02] active:scale-[0.98] text-theme-accent-700 border border-theme-accent-200',
-		'h-9 px-4 text-sm font-semibold uppercase transition-all duration-200 ease-out flex items-center justify-center gap-1.5',
+		theme === 'dark' &&
+			'bg-gradient-to-r from-theme-accent-600 via-fuchsia-600 to-rose-500 text-white shadow-[0_14px_34px_-18px_rgb(168_85_247_/_0.95)] hover:shadow-[0_18px_46px_-18px_rgb(244_63_94_/_0.9)]',
+		theme === 'light' &&
+			'border border-white/50 bg-white text-theme-accent-800 shadow-[0_18px_40px_-24px_rgb(255_255_255_/_0.8)] hover:bg-theme-accent-50',
+		'h-9 rounded-full px-4 text-sm font-semibold uppercase tracking-[0.12em] transition-all duration-300 ease-out flex items-center justify-center gap-1.5 hover:-translate-y-0.5 hover:scale-[1.02] active:translate-y-0 active:scale-[0.98]',
 		className,
 	);
 }
@@ -31,5 +33,8 @@ export function input({
 }
 
 export function card({ className }: { className?: ClassNameValue } = {}) {
-	return twMerge('relative flex bg-theme-base-800', className);
+	return twMerge(
+		'relative flex border border-white/10 bg-theme-base-900/80 backdrop-blur',
+		className,
+	);
 }

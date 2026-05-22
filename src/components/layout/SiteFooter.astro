@@ -9,7 +9,9 @@ export interface Props {
 ---
 
 <footer class={Astro.props.class}>
-	<section class="flex flex-wrap items-center justify-between gap-y-2 py-4">
+	<section
+		class="flex flex-wrap items-center justify-between gap-y-4 rounded-[1.5rem] border border-white/10 bg-white/[0.03] px-4 py-4 shadow-astro-card backdrop-blur"
+	>
 		<ul class="flex flex-wrap gap-2" aria-label="Supported payment methods">
 			<li>
 				<Icon name="visa" width={48} height={28} aria-hidden="true" />
@@ -38,7 +40,11 @@ export interface Props {
 		</ul>
 		<ul class="flex flex-wrap gap-2" aria-label="Social links">
 			<li>
-				<SocialIconLink name="Bluesky" icon="bluesky" href="https://bsky.app/profile/astrodotbuild.bsky.social" />
+				<SocialIconLink
+					name="Bluesky"
+					icon="bluesky"
+					href="https://bsky.app/profile/astrodotbuild.bsky.social"
+				/>
 			</li>
 			<li>
 				<SocialIconLink name="Discord" icon="discord" href="https://astro.build/chat" />
@@ -62,24 +68,36 @@ export interface Props {
 		</ul>
 	</section>
 
-	<div class="border-b border-theme-base-700"></div>
+	<div class="mt-8 border-b border-white/10"></div>
 
 	<section class="flex flex-wrap justify-between gap-y-2 py-6 text-sm text-theme-base-400">
 		<p>
 			{'© 2026 | '}
-			<a href="/" class="text-theme-accent-400 underline underline-offset-2 hover:text-theme-accent-300">
+			<a
+				href="/"
+				class="text-theme-accent-400 underline underline-offset-2 hover:text-theme-accent-300"
+			>
 				Gitmo
 			</a>
 			{' | All rights reserved'}
 		</p>
 		<p class="flex flex-wrap gap-x-4">
-			<a href="/shipping" class="text-theme-accent-400 underline underline-offset-2 hover:text-theme-accent-300">
+			<a
+				href="/shipping"
+				class="text-theme-accent-400 underline underline-offset-2 hover:text-theme-accent-300"
+			>
 				Shipping Policy
 			</a>
-			<a href="/privacy" class="text-theme-accent-400 underline underline-offset-2 hover:text-theme-accent-300">
+			<a
+				href="/privacy"
+				class="text-theme-accent-400 underline underline-offset-2 hover:text-theme-accent-300"
+			>
 				Privacy Policy
 			</a>
-			<a href="/terms" class="text-theme-accent-400 underline underline-offset-2 hover:text-theme-accent-300">
+			<a
+				href="/terms"
+				class="text-theme-accent-400 underline underline-offset-2 hover:text-theme-accent-300"
+			>
 				Terms of Service
 			</a>
 		</p>

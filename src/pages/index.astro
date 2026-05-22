@@ -10,7 +10,15 @@ applyDefaultCacheHeaders(Astro.response.headers);
 
 <PrimaryLayout title="Gitmo">
 	<LandingHero />
-	<main class="breakout mt-16 flex flex-col gap-y-16" id="products">
+	<main
+		class="breakout relative mt-0 flex flex-col gap-y-20 px-0 py-16 md:gap-y-24 md:py-24"
+		id="products"
+	>
+		<div
+			class="pointer-events-none absolute inset-x-0 top-0 h-48 bg-gradient-to-b from-theme-accent-950/20 to-transparent"
+			aria-hidden="true"
+		>
+		</div>
 		<div class="content animate-fade-in-up" style="animation-delay: 0.1s; opacity: 0">
 			<ProductCarouselSection heading="Fresh designs from the community" />
 		</div>
@@ -18,7 +26,8 @@ applyDefaultCacheHeaders(Astro.response.headers);
 		<div class="content animate-fade-in-up" style="animation-delay: 0.2s; opacity: 0">
 			<ProductCarouselSection
 				heading="Featured products"
-				filterProducts={(products) => products.filter((p) => p.collectionIds?.includes('bestSellers'))}
+				filterProducts={(products) =>
+					products.filter((p) => p.collectionIds?.includes('bestSellers'))}
 			/>
 		</div>
 

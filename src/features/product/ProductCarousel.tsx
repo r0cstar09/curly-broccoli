@@ -1,11 +1,10 @@
 import { RiArrowsArrowLeftLine, RiArrowsArrowRightLine } from 'solid-icons/ri';
-import { type ParentProps, createSignal } from 'solid-js';
+import { type ParentProps, createSignal, createUniqueId } from 'solid-js';
 import { SquareIconButton } from '~/components/ui/Button.tsx';
 import { PageHeading, PageSection } from '~/components/ui/PageSection.tsx';
 
 export const MEASURED_ITEM_ID = 'measured-li';
 export const GAP = 16; // gap-4
-const HEADING_ID = 'product-carousel-heading';
 
 export default function ProductCarouselSection(
 	props: ParentProps<{
@@ -13,6 +12,7 @@ export default function ProductCarouselSection(
 	}>,
 ) {
 	let list: HTMLDivElement | undefined;
+	const headingId = createUniqueId();
 	const [scrollStatus, setScrollStatus] = createSignal<'start' | 'end' | 'middle'>('start');
 
 	const scroll = (delta: number) => {
@@ -30,15 +30,23 @@ export default function ProductCarouselSection(
 	};
 
 	return (
-		<PageSection aria-labelledby={HEADING_ID}>
+		<PageSection aria-labelledby={headingId}>
 			<div class="flex items-center justify-between gap-2">
-				<PageHeading id={HEADING_ID}>{props.heading}</PageHeading>
-				<div class="flex gap-2">
-					<SquareIconButton theme="dark" onClick={() => scroll(-1)} disabled={scrollStatus() === 'start'}>
+				<PageHeading id={headingId}>{props.heading}</PageHeading>
+				<div class="flex gap-2 rounded-full border border-white/10 bg-white/[0.04] p-1 backdrop-blur">
+					<SquareIconButton
+						theme="dark"
+						onClick={() => scroll(-1)}
+						disabled={scrollStatus() === 'start'}
+					>
 						<RiArrowsArrowLeftLine />
 						<span class="sr-only">Scroll left</span>
 					</SquareIconButton>
-					<SquareIconButton theme="dark" onClick={() => scroll(1)} disabled={scrollStatus() === 'end'}>
+					<SquareIconButton
+						theme="dark"
+						onClick={() => scroll(1)}
+						disabled={scrollStatus() === 'end'}
+					>
 						<RiArrowsArrowRightLine />
 						<span class="sr-only">Scroll right</span>
 					</SquareIconButton>
@@ -54,7 +62,7 @@ export default function ProductCarouselSection(
 						return 'middle';
 					});
 				}}
-				class="snap-x snap-mandatory overflow-x-auto sm:snap-none"
+				class="no-scrollbar -mx-4 snap-x snap-mandatory overflow-x-auto px-4 [mask-image:linear-gradient(90deg,transparent,black_1rem,black_96%,transparent)] sm:snap-none"
 				ref={list}
 			>
 				{props.children}

@@ -13,10 +13,11 @@ export function Button(props: Props) {
 			{...props}
 			type={props.type ?? 'button'}
 			class={twMerge(
-				'flex h-12 items-center justify-center gap-3 bg-theme-accent-600 px-4 text-sm font-semibold uppercase text-white transition-all duration-200 ease-out',
+				'flex h-12 items-center justify-center gap-3 rounded-full bg-gradient-to-r from-theme-accent-600 via-fuchsia-600 to-rose-500 px-5 text-sm font-semibold uppercase tracking-[0.12em] text-white shadow-[0_18px_42px_-24px_rgb(168_85_247_/_0.95)] transition-all duration-300 ease-out',
 				props.class,
 				(props.disabled || props.pending) && 'opacity-50',
-				!props.disabled && 'hover:bg-theme-accent-700 hover:scale-[1.02] active:scale-[0.98]',
+				!props.disabled &&
+					'hover:-translate-y-0.5 hover:scale-[1.02] active:translate-y-0 active:scale-[0.98]',
 			)}
 		>
 			{props.pending ? <RiSystemLoader2Line class="animate-spin" /> : props.children}
@@ -43,12 +44,14 @@ export function SquareIconButton(props: SquareIconButtonProps) {
 			onClick={props.onClick}
 			disabled={props.disabled}
 			classList={{
-				'bg-theme-base-100 border-theme-base-200 text-theme-base-900 hover:enabled:border-theme-base-400 hover:enabled:bg-theme-base-300 disabled:text-theme-base-400':
+				'border-theme-base-200 bg-theme-base-100 text-theme-base-900 hover:enabled:border-theme-base-400 hover:enabled:bg-theme-base-300 disabled:text-theme-base-400':
 					theme() === 'light',
-				'bg-theme-base-800 border-theme-base-700 text-theme-base-100 hover:enabled:border-theme-base-700 hover:enabled:bg-theme-base-800':
+				'border-white/10 bg-white/[0.06] text-theme-base-100 shadow-[inset_0_1px_0_rgb(255_255_255_/_0.08)] backdrop-blur hover:enabled:border-theme-accent-400/50 hover:enabled:bg-theme-accent-500/15':
 					theme() === 'dark',
 			}}
-			class={`size-9 border transition-all duration-200 grid-center data-[icon]:*:size-6 hover:enabled:scale-105 ${props.class ?? ''}`}
+			class={`size-10 rounded-full border transition-all duration-300 grid-center hover:enabled:-translate-y-0.5 hover:enabled:scale-105 disabled:cursor-not-allowed disabled:opacity-40 data-[icon]:*:size-6 ${
+				props.class ?? ''
+			}`}
 		>
 			{props.children}
 		</Dynamic>

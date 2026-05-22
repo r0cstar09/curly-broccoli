@@ -10,16 +10,26 @@ export interface Props {
 }
 ---
 
-<Card class="overflow-hidden rounded-lg shadow-md transition-all duration-300 ease-out hover:shadow-glow hover:-translate-y-1 group">
+<Card
+	class="group overflow-hidden rounded-[1.5rem] bg-gradient-to-br from-white/[0.08] via-theme-base-900/90 to-theme-accent-950/60 shadow-astro-card transition-all duration-500 ease-out hover:-translate-y-2 hover:shadow-astro-lift"
+>
 	<a href={`/collections/${Astro.props.slug}`} class="block w-full">
-		<article class="flex flex-col items-start gap-3 p-6">
+		<article class="relative flex min-h-full flex-col items-start gap-4 p-4">
+			<div
+				class="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_10%,rgb(255_255_255_/_0.16),transparent_34%)] opacity-80 transition duration-500 group-hover:opacity-100"
+			>
+			</div>
 			{
 				Astro.props.imageUrl && (
-					<div class="overflow-hidden rounded-lg">
+					<div class="relative overflow-hidden rounded-[1.1rem] border border-white/10">
 						<img
-							src={Astro.props.imageUrl.startsWith('/') ? Astro.props.imageUrl : new URL(Astro.props.imageUrl, Astro.url.origin).href}
+							src={
+								Astro.props.imageUrl.startsWith('/')
+									? Astro.props.imageUrl
+									: new URL(Astro.props.imageUrl, Astro.url.origin).href
+							}
 							alt=""
-							class="aspect-square size-full object-cover self-center transition-transform duration-500 ease-out group-hover:scale-110"
+							class="aspect-square size-full self-center object-cover transition-transform duration-700 ease-out group-hover:scale-110"
 							loading="lazy"
 							width={390}
 							height={390}
@@ -27,10 +37,12 @@ export interface Props {
 					</div>
 				)
 			}
-			<p class="text-pretty text-3xl font-semibold text-theme-base-100 transition-colors duration-300 group-hover:text-theme-accent-300">
+			<p
+				class="relative text-pretty px-2 text-3xl font-semibold tracking-[-0.04em] text-theme-base-100 transition-colors duration-300 group-hover:text-theme-accent-200"
+			>
 				{Astro.props.name}
 			</p>
-			<p class={button({ theme: 'dark' })}>
+			<p class={button({ theme: 'dark', className: 'relative mx-2 mb-2' })}>
 				{Astro.props.cta ?? 'Shop now'}
 			</p>
 		</article>

@@ -30,7 +30,7 @@ const { title } = Astro.props;
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="mask-icon" href="/favicon.svg" color="#7c3aed" />
+		<link rel="mask-icon" href="/favicon.svg" color="#a855f7" />
 
 		<SEO {...defaults} {title} />
 
@@ -45,13 +45,11 @@ const { title } = Astro.props;
 			)
 		}
 	</head>
-	<body class="content-grid min-h-screen">
+	<body class="content-grid min-h-screen overflow-x-clip">
 		<SiteRibbon />
-		<div class={`breakout border-b w-full border-theme-base-700`}></div>
 		<SiteHeader />
-		<div class={`breakout border-b w-full border-theme-base-700`}></div>
 		<slot />
-		<div class="pt-48">
+		<div class="pt-32 md:pt-48">
 			<SiteFooter />
 		</div>
 		{import.meta.env.DEV && <SolidQueryDevtools client:idle />}

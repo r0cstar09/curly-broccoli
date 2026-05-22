@@ -1,5 +1,6 @@
 ---
 import { CartDrawer } from '~/features/cart/CartDrawer.tsx';
+import GitMoreLogo from './GitMoreLogo.astro';
 import type { HTMLAttributes } from 'astro/types';
 
 export interface Props extends HTMLAttributes<'nav'> {}
@@ -9,17 +10,25 @@ const { class: className, ...props } = Astro.props;
 
 <nav
 	aria-label="Site navigation"
-	class:list={["min-h-20 !flex items-center flex-row md:justify-between py-2 bg-theme-base-900", className]}
+	class:list={[
+		'breakout sticky top-0 z-40 border-b border-white/10 bg-theme-base-950/80 px-4 py-3 shadow-[0_12px_42px_-30px_rgb(0_0_0_/_0.95)] backdrop-blur-xl',
+		className,
+	]}
 	{...props}
 >
-	<div class="flex-1">
-		<a class="-m-2 block w-fit p-2 transition-all duration-200 hover:text-theme-accent-400 hover:scale-105" href="/">
-			<span class="font-display text-2xl font-bold tracking-tight text-theme-accent-300">Gitmo</span>
+	<div class="mx-auto flex w-full max-w-screen-2xl items-center justify-between gap-4">
+		<a
+			class="group -m-2 block w-fit rounded-full p-2 transition-all duration-300 hover:-translate-y-0.5 hover:scale-[1.02]"
+			href="/"
+		>
+			<GitMoreLogo
+				class="h-11 w-auto drop-shadow-[0_0_22px_rgb(168_85_247_/_0.28)] transition duration-300 group-hover:drop-shadow-[0_0_30px_rgb(244_63_94_/_0.4)]"
+			/>
 			<span class="sr-only">Home</span>
 		</a>
-	</div>
-	<div class="flex flex-1 items-center justify-end gap-4">
-		<CartDrawer client:idle />
+		<div class="flex items-center justify-end gap-4">
+			<CartDrawer client:idle />
+		</div>
 	</div>
 </nav>
 
