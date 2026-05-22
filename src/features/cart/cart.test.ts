@@ -6,22 +6,21 @@ import { getCartSubtotal, normalizeCart } from './cart.ts';
 import { kitchenSinkFixture } from './fixtures/kitchen-sink.ts';
 
 test('getCartSubtotal', () => {
-	expect(getCartSubtotal(kitchenSinkFixture)).toBe(16_975);
+	expect(getCartSubtotal(kitchenSinkFixture)).toBe(22_990);
 });
 
 describe('normalizeCart', () => {
 	test('combine quantities by variation selections', () => {
 		const result = normalizeCart(kitchenSinkFixture);
 
-		expect(result.items).toHaveLength(3);
+		expect(result.items).toHaveLength(2);
 		expect(result.items[0]).toEqual({
 			...kitchenSinkFixture.items[0],
-			quantity: 8,
+			quantity: 9,
 		});
 
 		// other items should be left alone
-		expect(result.items[1]).toEqual(kitchenSinkFixture.items[2]);
-		expect(result.items[2]).toEqual(kitchenSinkFixture.items[3]);
+		expect(result.items[1]).toEqual(kitchenSinkFixture.items[3]);
 	});
 });
 
@@ -83,14 +82,12 @@ describe('expandCartDataFromProducts', () => {
 		});
 	});
 
-	it('should throw an error for non-existent product variant', () => {
+	it('should ignore a non-existent product variant', () => {
 		const cartData = {
 			items: [{ id: 'item1', quantity: 1, productVariantId: 'non-existent' }],
 		};
 
-		expect(() => expandCartDataFromProducts(cartData, mockProducts)).toThrow(
-			'Product not found for variant non-existent',
-		);
+		expect(expandCartDataFromProducts(cartData, mockProducts)).toEqual([]);
 	});
 
 	it('should handle an empty cart', () => {

@@ -6,17 +6,16 @@ const collectionDefaults = {
 	deletedAt: null,
 };
 
-const defaultVariant = {
-	id: 'default',
+const defaultVariant = (productId: string) => ({
+	id: `${productId}-default`,
 	name: 'Default',
 	stock: 20,
 	options: {} as Record<string, string>,
-};
+});
 
 const productDefaults = {
 	description: '',
 	images: [],
-	variants: [defaultVariant],
 	discount: 0,
 	createdAt: new Date().toISOString(),
 	updatedAt: new Date().toISOString(),
@@ -62,7 +61,7 @@ export const products: Record<string, Product> = {
 		price: 2200,
 		imageUrl: asset('astro-unisex-tshirt.png'),
 		collectionIds: ['apparel', 'bestSellers'],
-		variants: [defaultVariant],
+		variants: [defaultVariant('astro-unisex-tshirt')],
 	},
 	'astro-beanie': {
 		...productDefaults,
@@ -73,7 +72,7 @@ export const products: Record<string, Product> = {
 		price: 2400,
 		imageUrl: asset('astro-beanie.png'),
 		collectionIds: ['apparel', 'bestSellers'],
-		variants: [defaultVariant],
+		variants: [defaultVariant('astro-beanie')],
 	},
 	'astro-zip-up-hoodie': {
 		...productDefaults,
@@ -84,7 +83,7 @@ export const products: Record<string, Product> = {
 		price: 4500,
 		imageUrl: asset('astro-zip-up-hoodie.png'),
 		collectionIds: ['apparel', 'bestSellers'],
-		variants: [defaultVariant],
+		variants: [defaultVariant('astro-zip-up-hoodie')],
 	},
 	'astro-cap': {
 		...productDefaults,
@@ -95,7 +94,7 @@ export const products: Record<string, Product> = {
 		price: 3000,
 		imageUrl: asset('astro-cap.png'),
 		collectionIds: ['apparel'],
-		variants: [defaultVariant],
+		variants: [defaultVariant('astro-cap')],
 	},
 	'astro-sticker-pack': {
 		...productDefaults,
@@ -106,7 +105,7 @@ export const products: Record<string, Product> = {
 		price: 800,
 		imageUrl: asset('astro-sticker-pack.png'),
 		collectionIds: ['stickers', 'bestSellers'],
-		variants: [defaultVariant],
+		variants: [defaultVariant('astro-sticker-pack')],
 	},
 	'astro-houston-sticker': {
 		...productDefaults,
@@ -117,7 +116,7 @@ export const products: Record<string, Product> = {
 		price: 400,
 		imageUrl: asset('astro-houston-sticker.png'),
 		collectionIds: ['stickers'],
-		variants: [defaultVariant],
+		variants: [defaultVariant('astro-houston-sticker')],
 	},
 	'astro-universe-stickers': {
 		...productDefaults,
@@ -128,7 +127,7 @@ export const products: Record<string, Product> = {
 		price: 800,
 		imageUrl: asset('astro-universe-stickers.png'),
 		collectionIds: ['stickers', 'bestSellers'],
-		variants: [defaultVariant],
+		variants: [defaultVariant('astro-universe-stickers')],
 	},
 	'astro-lighthouse-sticker': {
 		...productDefaults,
@@ -139,7 +138,7 @@ export const products: Record<string, Product> = {
 		price: 400,
 		imageUrl: asset('astro-lighthouse-sticker.png'),
 		collectionIds: ['stickers'],
-		variants: [defaultVariant],
+		variants: [defaultVariant('astro-lighthouse-sticker')],
 	},
 };
 
