@@ -2,8 +2,17 @@ import type { GetImageResult } from 'astro';
 import { For, createSignal, onMount } from 'solid-js';
 import Card from '~/components/ui/Card.tsx';
 
+export type ProductImage = {
+	attributes: GetImageResult['attributes'];
+	src: string;
+	srcSet: {
+		attribute: string;
+		values?: GetImageResult['srcSet']['values'];
+	};
+};
+
 interface ProductImageCarouselProps {
-	productImages: GetImageResult[];
+	productImages: ProductImage[];
 }
 
 export function ProductImageCarousel(props: ProductImageCarouselProps) {

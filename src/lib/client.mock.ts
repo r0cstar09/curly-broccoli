@@ -4,7 +4,6 @@
 import { collections, products } from './catalog.ts';
 import type { Options, RequestResult } from '@hey-api/client-fetch';
 import type {
-	Collection,
 	CreateCustomerData,
 	CreateCustomerError,
 	CreateCustomerResponse,
@@ -27,7 +26,6 @@ import type {
 	GetProductsError,
 	GetProductsResponse,
 	Order,
-	Product,
 } from './client.types.ts';
 
 export * from './client.types.ts';

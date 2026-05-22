@@ -90,6 +90,8 @@ export type Address = {
 
 export type OrderInput = {
 	number?: number | null;
+	stripeSessionId?: string | null;
+	status?: 'pending' | 'paid' | 'fulfilled' | 'cancelled' | 'refunded';
 	customerId: string;
 	customerName: string;
 	lineItems: Array<LineItemInput>;

@@ -46,7 +46,7 @@ export const cart = {
 			}
 
 			const cart = await getCart(ctx);
-			setCart(ctx, addItemToCart(cart, lineItem));
+			await setCart(ctx, addItemToCart(cart, lineItem));
 		},
 	}),
 	deleteItem: defineAction({
@@ -55,7 +55,7 @@ export const cart = {
 		}),
 		handler: async (input, ctx) => {
 			const cart = await getCart(ctx);
-			setCart(ctx, removeItemFromCart(cart, input.id));
+			await setCart(ctx, removeItemFromCart(cart, input.id));
 		},
 	}),
 	updateItem: defineAction({
@@ -65,7 +65,7 @@ export const cart = {
 		}),
 		handler: async (input, ctx) => {
 			const cart = await getCart(ctx);
-			setCart(ctx, updateCartItemQuantity(cart, input.id, input.quantity));
+			await setCart(ctx, updateCartItemQuantity(cart, input.id, input.quantity));
 		},
 	}),
 };
@@ -74,6 +74,6 @@ async function getCart(ctx: ActionAPIContext): Promise<Cart> {
 	return normalizeCart(await loadCartFromCookies(ctx.cookies));
 }
 
-function setCart(ctx: ActionAPIContext, cart: Cart): void {
-	saveCartToCookies(cart, ctx.cookies);
+async function setCart(ctx: ActionAPIContext, cart: Cart): Promise<void> {
+	await saveCartToCookies(cart, ctx.cookies);
 }

@@ -1,5 +1,5 @@
 import type { LineItem, Product } from 'storefront:client';
-import { z } from 'zod';
+import { z } from 'astro:schema';
 import { unwrap } from '~/lib/util.ts';
 
 export type { LineItem } from 'storefront:client';

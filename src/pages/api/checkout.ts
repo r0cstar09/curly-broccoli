@@ -13,7 +13,8 @@ export const POST: APIRoute = async (context) => {
 	if (!STRIPE_SECRET_KEY || !US_SHIPPING_RATE_ID || !INTERNATIONAL_SHIPPING_RATE_ID) {
 		return new Response(
 			JSON.stringify({
-				error: 'Checkout is not configured. Set STRIPE_SECRET_KEY, US_SHIPPING_RATE_ID, and INTERNATIONAL_SHIPPING_RATE_ID in your environment.',
+				error:
+					'Checkout is not configured. Set STRIPE_SECRET_KEY, US_SHIPPING_RATE_ID, and INTERNATIONAL_SHIPPING_RATE_ID in your environment.',
 			}),
 			{ status: 503, headers: { 'Content-Type': 'application/json' } },
 		);
@@ -21,9 +22,22 @@ export const POST: APIRoute = async (context) => {
 
 	const cart = await loadCartFromCookies(context.cookies);
 
-	// TODO: we probably want to check here the stock of items/variants
-	// because they could be in the checkout screen _while_ the last thing was being ordered,
-	// then get an error after submitting payment
+	if (cart.items.length === 0) {
+		return new Response(JSON.stringify({ error: 'Cart is empty.' }), {
+			status: 400,
+			headers: { 'Content-Type': 'application/json' },
+		});
+	}
+
+	const outOfStockItem = cart.items.find((item) => item.quantity > item.productVariant.stock);
+	if (outOfStockItem) {
+		return new Response(
+			JSON.stringify({
+				error: `Not enough stock for ${outOfStockItem.productVariant.product.name}.`,
+			}),
+			{ status: 409, headers: { 'Content-Type': 'application/json' } },
+		);
+	}
 
 	const stripe = new Stripe(STRIPE_SECRET_KEY);
 

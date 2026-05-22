@@ -87,6 +87,29 @@ To use the mock API, update the [`tsconfig.json`](https://github.com/withastro/s
 #### Environment variables
 
 - `STRIPE_SECRET_KEY` - A Stripe API key [used to authenticate requests](https://docs.stripe.com/keys).
+- `STRIPE_WEBHOOK_SECRET` - The signing secret for the `/api/webhooks/stripe` endpoint.
+- `US_SHIPPING_RATE_ID` and `INTERNATIONAL_SHIPPING_RATE_ID` - Stripe Shipping Rate IDs used to build Checkout Sessions.
+
+### Persistent store data
+
+Products and collections are defined in `src/lib/catalog.ts`. Carts and orders persist to Turso/libSQL when these variables are set:
+
+- `TURSO_DATABASE_URL`
+- `TURSO_AUTH_TOKEN`
+
+For a new database, run:
+
+```sh
+turso db shell gitmo < src/lib/db/schema.sql
+```
+
+For an existing database created before persistent carts and Stripe session idempotency were added, run:
+
+```sh
+turso db shell gitmo < src/lib/db/migrations/0002_persistent_store.sql
+```
+
+Checkout completion is handled both by the success redirect and by the Stripe webhook. Order creation is idempotent by `stripe_session_id`, so retries, refreshes, and webhook delivery duplication should return the existing order instead of creating another one.
 
 ### Loops
 

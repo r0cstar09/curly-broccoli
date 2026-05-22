@@ -5,20 +5,20 @@ test.beforeEach(async ({ page }) => {
 });
 
 test('adding and deleting cart items', async ({ page }) => {
-	await page.goto('/products/lightroom', { waitUntil: 'networkidle' });
+	await page.goto('/products/astro-unisex-tshirt', { waitUntil: 'networkidle' });
 	await page.getByRole('button', { name: 'Add to cart' }).click();
 	await expect(
-		page.getByRole('dialog', { name: 'Cart' }).getByText('Adobe Lightroom'),
+		page.getByRole('dialog', { name: 'Cart' }).getByText('Astro Logo T-Shirt'),
 	).toBeVisible();
 
-	await page.goto('/products/illustrator', { waitUntil: 'networkidle' });
+	await page.goto('/products/astro-sticker-pack', { waitUntil: 'networkidle' });
 	await page.getByRole('button', { name: 'Add to cart' }).click();
 	await expect(
-		page.getByRole('dialog', { name: 'Cart' }).getByText('Adobe Illustrator'),
+		page.getByRole('dialog', { name: 'Cart' }).getByText('Houston Sticker Sheet'),
 	).toBeVisible();
 
 	await expect(page.getByRole('dialog', { name: 'Cart' }).getByTestId('cart-total')).toContainText(
-		'32.98',
+		'30.00',
 	);
 
 	await page
@@ -28,13 +28,13 @@ test('adding and deleting cart items', async ({ page }) => {
 		.click();
 
 	await expect(
-		page.getByRole('dialog', { name: 'Cart' }).getByText('Adobe Lightroom'),
+		page.getByRole('dialog', { name: 'Cart' }).getByText('Astro Logo T-Shirt'),
 	).not.toBeVisible();
 	await expect(
-		page.getByRole('dialog', { name: 'Cart' }).getByText('Adobe Illustrator'),
+		page.getByRole('dialog', { name: 'Cart' }).getByText('Houston Sticker Sheet'),
 	).toBeVisible();
 	await expect(page.getByRole('dialog', { name: 'Cart' }).getByTestId('cart-total')).toContainText(
-		'22.99',
+		'8.00',
 	);
 
 	await new Promise((r) => setTimeout(r, 100));
@@ -46,10 +46,10 @@ test('adding and deleting cart items', async ({ page }) => {
 		.click();
 
 	await expect(
-		page.getByRole('dialog', { name: 'Cart' }).getByText('Adobe Lightroom'),
+		page.getByRole('dialog', { name: 'Cart' }).getByText('Astro Logo T-Shirt'),
 	).not.toBeVisible();
 	await expect(
-		page.getByRole('dialog', { name: 'Cart' }).getByText('Adobe Illustrator'),
+		page.getByRole('dialog', { name: 'Cart' }).getByText('Houston Sticker Sheet'),
 	).not.toBeVisible();
 	await expect(page.getByRole('dialog', { name: 'Cart' }).getByTestId('cart-empty')).toBeVisible();
 });

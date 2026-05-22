@@ -1,11 +1,11 @@
-import type { GetImageResult } from 'astro';
 import { RiSystemCheckLine } from 'solid-icons/ri';
 import { For, Show, createSignal } from 'solid-js';
 import { twMerge } from 'tailwind-merge';
 import Card from '~/components/ui/Card.tsx';
+import type { ProductImage } from './ProductImageCarousel.tsx';
 
 interface ProductImageSwitcherProps {
-	productImages: GetImageResult[];
+	productImages: ProductImage[];
 }
 
 export function ProductImageSwitcher(props: ProductImageSwitcherProps) {
